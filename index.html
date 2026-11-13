@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CUSTOMIZATION AND ADJUSTMENT: Change the browser tab title here. -->
+    <title>Jeepney Runner</title>
+
+    <!-- CUSTOMIZATION AND ADJUSTMENT: Change the Open Graph title and description here. -->
+    <meta property="og:title" content="Jeepney Runner">
+    <meta property="og:description" content="Drive through the city, jump over traffic cones and other jeepneys, and achieve the highest score!">
+
+    <!-- CUSTOMIZATION AND ADJUSTMENT: Replace these URLs after publishing your game. -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com/jeepney-runner/">
+    <meta property="og:image" content="https://example.com/jeepney-runner/assets/preview.png">
+    <meta property="og:image:alt" content="Jeepney Runner game preview">
+
+    <!-- Link to the CSS file. -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Link to the JavaScript file. -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <main class="game-container">
+
+        <!-- CUSTOMIZATION AND ADJUSTMENT: Change the main displayed game title here. -->
+        <h1 id="gameTitle">Jeepney Runner</h1>
+
+        <!-- CUSTOMIZATION AND ADJUSTMENT: Change the game description here. -->
+        <p id="gameDescription">
+            Drive your jeepney through a busy city!
+            Jump over traffic cones and other jeepneys,
+            avoid collisions, and earn the highest score.
+        </p>
+
+        <!-- Scoreboard -->
+        <section class="scoreboard" aria-label="Game scores">
+
+            <div class="score-item">
+                <span>Score:</span>
+                <span id="scoreDisplay" aria-live="off">0</span>
+            </div>
+
+            <div class="score-item">
+                <span>High Score:</span>
+                <span id="highScoreDisplay" aria-live="off">0</span>
+            </div>
+
+        </section>
+
+        <!-- Game Canvas -->
+        <div class="canvas-container">
+
+            <!--
+                GAME CANVAS:
+                Logical resolution is 960 x 450.
+
+                JavaScript will draw:
+                - Jeepney (runner)
+                - Traffic cone (obstacle 1)
+                - Other jeepney (obstacle 2)
+                - City background
+                - Birds (doodad 1)
+                - Trees (doodad 2)
+
+                PNG images can replace these drawings later.
+            -->
+            <canvas
+                id="gameCanvas"
+                width="960"
+                height="450"
+                aria-label="Jeepney Runner game area"
+                aria-describedby="gameInstructions"
+            >
+                Your browser does not support HTML Canvas.
+            </canvas>
+
+            <!-- Game Over Overlay -->
+            <div
+                id="gameOverlay"
+                class="game-overlay"
+                role="status"
+                aria-live="polite"
+                hidden
+            >
+
+                <!-- CUSTOMIZATION AND ADJUSTMENT: Change the Game Over heading here. -->
+                <h2 id="overlayTitle">Game Over!</h2>
+
+                <!-- CUSTOMIZATION AND ADJUSTMENT: Change the Game Over message here. -->
+                <p id="overlayMessage">
+                    Your jeepney hit an obstacle!
+                    Try again and beat your high score.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- CUSTOMIZATION AND ADJUSTMENT: Change the gameplay instructions here. -->
+        <p id="gameInstructions">
+            Press Space or Arrow Up to jump.
+            You can also click or tap the game area.
+            Avoid traffic cones and other jeepneys!
+        </p>
+
+        <!--
+            CUSTOMIZATION AND ADJUSTMENT:
+            Change the Start and Restart button text below.
+
+            JavaScript will use these data attributes to
+            switch the button text automatically.
+        -->
+        <button
+            id="startButton"
+            type="button"
+            data-start-text="Start Game"
+            data-restart-text="Restart Game"
+        >
+            Start Game
+        </button>
+
+        <!-- Dynamic asset loading status -->
+        <p
+            id="assetStatus"
+            class="asset-status"
+            role="status"
+            aria-live="polite"
+        ></p>
+
+    </main>
+
+</body>
+</html>

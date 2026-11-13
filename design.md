@@ -1,0 +1,9 @@
+- Game Title: Jeepney Runner
+- Game Theme: Jeepney Runner
+- Main Character (Runner): Jeepney
+- Obstacle 1: traffic cone
+- Obstacle 2: Other Jeepney
+- Background: City
+- Doodad 1: birds
+- Doodad 2: trees
+- Color Scheme: blue, orange and white
